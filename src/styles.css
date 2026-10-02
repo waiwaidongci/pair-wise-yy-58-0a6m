@@ -101,10 +101,85 @@ body { margin: 0; min-width: 320px; background: var(--paper); }
 .readiness strong { display: block; font-size: 22px; color: #146c5a; }
 .readiness span { color: #75867f; font-size: 11px; }
 
+/* ---------- 同步中心 / 角色 ---------- */
+.sync-btn, .role-btn { padding: 2px 8px; min-height: 44px; }
+.sync-btn-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.25; font-size: 12px; margin-left: 6px; }
+.sync-btn-text small { font-size: 10px; color: #a7c2b9; }
+.status-badge { padding: 4px 8px; }
+.sync-menu { border-radius: 8px; }
+.sync-menu-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.sync-menu-head strong { font-size: 14px; }
+.sync-status-row { display: flex; gap: 8px; align-items: center; font-size: 12.5px; color: #345048; }
+.sync-meta { font-size: 11px; color: #778a83; margin-top: 6px; }
+.sync-error { background: #fff2e0; color: #8a5312; font-size: 12px; }
+.sync-error .q-banner__content { font-size: 12px; }
+.pending-list { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; max-height: 190px; overflow-y: auto; }
+.pending-title { font-size: 11px; font-weight: 700; letter-spacing: .08em; color: #70857d; margin-bottom: 6px; }
+.pending-row { display: grid; grid-template-columns: 18px 1fr; column-gap: 6px; font-size: 12px; color: #3d544c; padding: 5px 0; }
+.pending-row small { grid-column: 2; color: #90a09a; font-size: 10px; }
+.sync-actions { margin-top: 12px; }
+.sync-actions .q-btn { width: 100%; }
+.demo-title { font-size: 11px; font-weight: 700; letter-spacing: .08em; color: #8aa098; }
+.demo-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.demo-actions .q-btn { font-size: 11px; }
+
+/* ---------- 断网 / 失败 / 锁定提示条 ---------- */
+.offline-banner { background: #fdeccb; color: #7a4a0c; margin-bottom: 12px; font-size: 13px; }
+.sync-banner { background: #fbe4e1; color: #8e2a25; margin-bottom: 12px; font-size: 13px; }
+.locked-banner { background: #16412f; color: #dcefe6; margin-bottom: 12px; font-size: 13px; }
+
+/* ---------- 检查页分区 ---------- */
+.checks-tabs { display: flex; gap: 6px; }
+.checks-tabs button { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: #f8faf9; color: #566b63; border-radius: 16px; padding: 6px 12px; cursor: pointer; font-size: 12px; }
+.checks-tabs button.active { background: #173d33; color: #fff; border-color: #173d33; }
+
+.merge-panel { padding: 16px; }
+.merge-card { border: 1px solid #ecc7bd; border-left: 4px solid #d9683f; background: #fffaf7; border-radius: 6px; padding: 14px; margin-bottom: 12px; }
+.merge-card-head { display: flex; align-items: center; gap: 10px; }
+.merge-card-head strong { font-size: 13.5px; }
+.merge-field { margin: 6px 0 10px; font-size: 12px; color: #6b7e77; }
+.merge-versions { display: flex; align-items: stretch; gap: 12px; }
+.merge-versions .version { flex: 1; border: 1.5px dashed #c9a08e; background: #fff; border-radius: 6px; padding: 12px; cursor: pointer; text-align: left; transition: all .15s; }
+.merge-versions .version.remote { border-color: #9db3ac; }
+.merge-versions .version small, .merge-versions .version strong { display: block; }
+.merge-versions .version small { color: #8a9b94; font-size: 11px; }
+.merge-versions .version strong { font-size: 22px; color: #b4502c; margin-top: 4px; }
+.merge-versions .version.remote strong { color: #15604f; }
+.merge-versions .version.chosen { border-style: solid; border-width: 2px; background: #eef7f2; }
+.merge-versions .version:disabled { cursor: not-allowed; opacity: .72; }
+.merge-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; color: #715648; }
+.merge-foot .resolved { color: #2b8a69; }
+.role-hint { color: #9a631b; font-size: 11px; }
+
+.stale-banner { background: #fdeccb; color: #7a4a0c; margin-bottom: 12px; font-size: 12px; }
+.stale-tag { margin-left: 6px; }
+.comment-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.comment-actions .reconfirm { border: 0; background: transparent; color: #b4502c; padding: 0; cursor: pointer; font-size: 11px; text-decoration: underline; }
+.comment-actions .reconfirm:disabled { color: #b7a096; cursor: not-allowed; }
+
+.all-comments { padding: 16px; max-height: calc(100vh - 290px); overflow-y: auto; }
+.comment-row.all { cursor: pointer; border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; grid-template-columns: 34px 1fr; }
+.all-comments-input { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+
+/* ---------- 会签页 ---------- */
+.review-card.mine { border-color: #2b8a69; box-shadow: 0 0 0 1px rgba(43,138,105,.35); }
+.review-card .review-head small { font-weight: 400; color: #7e8c87; }
+.scope-steps, .signed-at { display: block; color: #7d8f88; font-size: 11px; margin: 3px 0; }
+.review-card .q-btn { margin-top: 6px; }
+.release-gate.clear { background: #1d5c46; }
+.gate-summary { display: flex; align-items: center; gap: 10px; }
+.blocker-panel { padding: 0 18px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+.blocker-group h4 { margin: 8px 0; font-size: 13px; color: #465f57; display: flex; align-items: center; gap: 8px; }
+.blocker-row { width: 100%; display: grid; grid-template-columns: 18px 1fr 16px; align-items: center; gap: 6px; text-align: left; background: #fbf3f2; border: 1px solid #eed8d4; border-radius: 5px; padding: 9px 11px; margin-bottom: 6px; cursor: pointer; color: #5a302c; font-size: 12.5px; }
+.blocker-row:hover { background: #f7e8e5; }
+.blocker-row .blocker-go { color: #b07a72; }
+.inspector-hint { margin: 10px 2px 0; font-size: 11px; color: #81958d; line-height: 1.6; }
+
 @media (max-width: 980px) {
   .work-grid, .check-layout { grid-template-columns: 1fr; }
   .conflict-list { border-right: 0; border-bottom: 1px solid var(--line); }
   .review-grid { grid-template-columns: repeat(2, 1fr); }
+  .blocker-panel { grid-template-columns: 1fr; }
 }
 @media (max-width: 650px) {
   .workspace-page { padding: 16px 12px; }
